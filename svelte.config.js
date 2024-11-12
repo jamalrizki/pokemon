@@ -4,19 +4,13 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
   kit: {
     adapter: adapter({
-      // default options are shown
-      pages: 'build',
-      assets: 'build',
-      fallback: '404.html',
-      precompress: false,
-      strict: true
+      fallback: '404.html', // This is important for client-side routing
+      strict: false
     }),
     paths: {
-      base: process.env.NODE_ENV === 'production' ? '/web-assignment-poke-battle' : ''
+      base: process.env.NODE_ENV === 'production' ? '/pokemon' : ''
     }
   }
 };
 
 export default config;
-
-
